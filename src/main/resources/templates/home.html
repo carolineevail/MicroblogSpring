@@ -1,0 +1,28 @@
+<html>
+<body>
+
+
+{{^name}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your name" name="userName"/>
+    <button type="submit">Login</button>
+</form>
+{{/name}}
+
+{{#name}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your message" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+Messages by {{.}}:
+{{/name}}
+
+</body>
+</html>
+
+
+
+
+<!--In home.html, use Mustache tags to conditionally show the markup in the two screenshots below-->
+<!--If username doesn't exist, show the login form like the first screenshot-->
+<!--If username does exist, show the message submission form and message list like the second screenshot-->
