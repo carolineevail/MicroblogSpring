@@ -10,11 +10,20 @@
 {{/name}}
 
 {{#name}}
-<form action="/login" method="post">
+<form action="/add-message" method="post">
     <input type="text" placeholder="Enter your message" name="message"/>
     <button type="submit">Submit</button>
 </form>
 Messages by {{.}}:
+<ol>
+    {{#messages}}
+    <li>{{text}}</li>
+    <form action="/delete-entry" method="post">
+        <input type="hidden" name="id" value="{{id}}"/>
+        <button type="submit">Delete</button>
+    </form>
+    {{/messages}}
+</ol>
 {{/name}}
 
 </body>
@@ -23,6 +32,3 @@ Messages by {{.}}:
 
 
 
-<!--In home.html, use Mustache tags to conditionally show the markup in the two screenshots below-->
-<!--If username doesn't exist, show the login form like the first screenshot-->
-<!--If username does exist, show the message submission form and message list like the second screenshot-->
