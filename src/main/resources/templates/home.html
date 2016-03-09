@@ -22,6 +22,10 @@ Messages by {{.}}:
         <input type="hidden" name="id" value="{{id}}"/>
         <button type="submit">Delete</button>
     </form>
+    <form action="/edit-message" method="post">
+        <input type="hidden" name="id" value="{{id}}"/>
+        <button type="submit">Edit</button>
+    </form>
     {{/messages}}
 </ol>
 {{/name}}

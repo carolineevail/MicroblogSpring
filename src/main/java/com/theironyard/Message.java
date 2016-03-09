@@ -1,14 +1,25 @@
 package com.theironyard;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Caroline on 3/7/16.
  */
+@Entity
 public class Message {
-    int id;
+    @Id
+    @GeneratedValue
+    Integer id;
     String text;
 
-    public Message(int id, String text) {
+    public Message(Integer id, String text) {
         this.id = id;
+        this.text = text;
+    }
+
+    public Message(String text) {
         this.text = text;
     }
 
