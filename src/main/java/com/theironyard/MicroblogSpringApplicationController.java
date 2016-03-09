@@ -45,14 +45,14 @@ public class MicroblogSpringApplicationController {
     }
 
     @RequestMapping(path = "/edit-message", method = RequestMethod.GET)
-    public String updateMessage(Model model, Integer id) {
+    public String editMessage(Model model, Integer id) {
         Message message = messages.findOne(id);
         model.addAttribute("message", message);
         return "edit";
     }
 
-    @RequestMapping(path = "/edit-message", method = RequestMethod.POST)
-    public String editMessage(Integer id, String editedText) {
+    @RequestMapping(path = "/perform-edit", method = RequestMethod.POST)
+    public String performEdit(Integer id, String editedText) {
         Message message = messages.findOne(id);
         message.text = editedText;
         messages.save(message);
